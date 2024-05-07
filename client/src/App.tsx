@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 function App() {
 
   return (
-    <div>
+    <div className="bg-rose-50 h-full">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

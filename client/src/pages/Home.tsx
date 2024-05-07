@@ -8,13 +8,13 @@ const Home = () => {
 
   const adjustFlowersForScreenSize = () => {
     let screenScale = null;
-    const screenPosition = [1, -1, -35];
+    const screenPosition = [-2.65, -2.5, -0.5];
     const rotation = [0.2, 0, 0];
 
     if (window.innerWidth < 768) {
-      screenScale = [0.03, 0.03, 0.03];
+      screenScale = [0.3, 0.3, 0.3];
     } else {
-      screenScale = [0.03, 0.03, 0.03];
+      screenScale = [4, 4, 4];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <section className='w-full h-screen relative'>
       <Canvas 
-        className={`w-full h-screen bg-pink-50 ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`w-full h-screen ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>

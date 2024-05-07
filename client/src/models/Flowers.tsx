@@ -19,7 +19,7 @@ const Flowers = ({ isRotating, setIsRotating, ...props }) => {
     const { nodes, materials } = useGLTF(flowerScene);
 
     const lastX = useRef(0);
-    const rotationSpeed = useRef(0);
+    const rotationSpeed = useRef(0.5);
     const dampingFactor = 0.95;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -91,8 +91,6 @@ const Flowers = ({ isRotating, setIsRotating, ...props }) => {
             flowerRef.current.rotation.y += rotationSpeed.current;
         } else {
             const rotation = flowerRef.current.rotation.y;
-
-            const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
         }
     });
 
