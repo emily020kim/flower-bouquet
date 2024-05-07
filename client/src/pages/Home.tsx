@@ -55,12 +55,14 @@ const Home = () => {
 
       <div className='flex flex-col w-full md:w-1/2 h-full md:h-screen items-center justify-center'>
         <h1 className='font-serif font-semibold text-2xl md:text-3xl lg:text-4xl text-red-300'>Emily's Bouquet</h1>
-        <button
-          className='flex bg-red-400 items-center px-2 py-3 rounded-md text-white font-normal font-serif mt-3'
-          //add route
-        >
-          Welcome <PiFlowerThin size={20} className="text-white ml-1" />
-        </button>
+        <a href='/bouquet'>
+          <button
+            className='flex bg-red-400 items-center px-2 py-3 rounded-md text-white font-normal font-serif mt-3'
+          >
+            Welcome <PiFlowerThin size={20} className="text-white ml-1" />
+          </button>
+        </a>
+        
       </div>
     </div>
     
