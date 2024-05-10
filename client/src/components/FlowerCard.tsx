@@ -1,4 +1,4 @@
-import { Card, Text, Stack, Heading, Button, CardBody, CardFooter } from '@chakra-ui/react';
+import { Card, Text, Stack, Heading, Button, CardBody, CardFooter, Tag } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 interface Flower {
@@ -33,7 +33,7 @@ const FlowerCard = () => {
                         <Stack mt='6' spacing='3'>
                             <Heading size='md'>{flower.name}</Heading>
                             <Text>{flower.genus}</Text>
-                            <Text>{flower.season}</Text>
+                            <Tag variant='solid' colorScheme='pink'>{flower.season}</Tag>
                         </Stack>
                     </CardBody>
                     <CardFooter>
