@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Bouquet from "./pages/Bouquet";
+import FlowerCard from "./components/FlowerCard";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bouquet" element={<Bouquet />} />
+          <Route path="/card" element={<FlowerCard />} />
         </Routes>
       </Router>
     </div>

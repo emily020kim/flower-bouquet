@@ -1,25 +1,21 @@
-import rose from "./images/rose.png";
-import lavender from "./images/lavender.png";
-import tulip from "./images/tulip.png";
-import orchid from "./images/orchid.png";
-import dahlia from "./images/dahlia.png";
-import hyacinth from "./images/hyacinth.png";
-import lily from  "./images/lily.png";
-import carnation from "./images/carnation.png";
-
 const express = require('express');
 const app = express();
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.get("/flowers", (req, res) => {
     res.json([
-        { name: "Rose", genus: "Rosa", season: "Spring, Summer", image: {rose} },
-        { name: "Lavender", genus: "Lavandula", season: "Spring, Summer", image: {lavender} },
-        { name: "Tulip", genus: "Tulipa", season: "Spring", image: {tulip} },
-        { name: "Orchid", genus: "Orchidaceae", season: "Winter, Spring", image: {orchid} },
-        { name: "Dahlia", genus: "Dahlia", season: "Spring, Autumn", image: {dahlia} },
-        { name: "Hyacinth", genus: "Hyacinthus", season: "Spring", image: {hyacinth} },
-        { name: "Lily", genus: "Lilium", season: "Summer, Autumn", image: {lily} },
-        { name: "Carnation", genus: "Caryophyllaceae", season: "Spring, Autumn", image: {carnation} },
+        { name: "Rose", genus: "Rosa", season: "Spring, Summer" },
+        { name: "Lavender", genus: "Lavandula", season: "Spring, Summer" },
+        { name: "Tulip", genus: "Tulipa", season: "Spring" },
+        { name: "Orchid", genus: "Orchidaceae", season: "Winter, Spring" },
+        { name: "Dahlia", genus: "Dahlia", season: "Spring, Autumn" },
+        { name: "Hyacinth", genus: "Hyacinthus", season: "Spring" },
+        { name: "Lily", genus: "Lilium", season: "Summer, Autumn" },
+        { name: "Carnation", genus: "Caryophyllaceae", season: "Spring, Autumn" },
     ])
 })
 
