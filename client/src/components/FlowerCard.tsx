@@ -1,5 +1,25 @@
-import { Card, Text, Stack, Heading, Button, CardBody, CardFooter, Tag } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { LuFlower } from "react-icons/lu";
+
+import carnation from "../assets/images/carnation.png";
+import dahlia from "../assets/images/dahlia.png";
+import hyacinth from "../assets/images/hyacinth.png";
+import lavender from "../assets/images/lavender.png";
+import lily from "../assets/images/lily.png";
+import orchid from "../assets/images/orchid.png";
+import rose from "../assets/images/rose.png";
+import tulip from "../assets/images/tulip.png";
+
+const images = [
+    { image: rose },
+    { image: lavender },
+    { image: tulip },
+    { image: orchid }, 
+    { image: dahlia },
+    { image: hyacinth },
+    { image: lily },
+    { image: carnation },
+]
 
 interface Flower {
     name: string;
@@ -27,21 +47,23 @@ const FlowerCard = () => {
     return (
         <div>
             {data && data.map((flower, index) => (
-                <Card key={index} maxW='sm'>
-                    <CardBody>
-                        {/** add image */}
-                        <Stack mt='6' spacing='3'>
-                            <Heading size='md'>{flower.name}</Heading>
-                            <Text>{flower.genus}</Text>
-                            <Tag variant='solid' colorScheme='pink'>{flower.season}</Tag>
-                        </Stack>
-                    </CardBody>
-                    <CardFooter>
-                        <Button variant='solid' colorScheme='blue'>
-                            Learn more
-                        </Button>
-                    </CardFooter>
-                </Card>
+                <div key={index} className='flex flex-col space-y-4 items-center justify-center bg-white w-1/6 rounded-md p-4'>
+                    <h1 className='text-2xl text-pink-400 font-semibold'>{flower.name}</h1>
+                    <img 
+                        src={images[index % images.length].image} 
+                        alt={flower.name} 
+                    />
+                    <h2 className='text-base'>Genus: {flower.genus}</h2>
+                    <h3 className='text-sm bg-pink-300 rounded-sm p-1'>{flower.season}</h3>
+                    {/** route to flower */}
+                    <a href='/bouquet'>
+                        <button
+                            className='flex bg-pink-500 text-sm items-center px-2 py-2 rounded-md text-white font-serif'
+                        >
+                            Take a look <LuFlower size={15} className="text-white ml-1" />
+                        </button>
+                    </a>
+                </div>
             ))}
         </div>
     )
