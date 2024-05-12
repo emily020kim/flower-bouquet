@@ -1,8 +1,11 @@
-
+import FlowerCard from "../components/FlowerCard";
 
 const Bouquet = () => {
   return (
-    <div>Bouquet</div>
+    <div>
+      <h1 className="flex items-center justify-center text-2xl font-semibold mb-6">My favorite flowers</h1>
+      <FlowerCard />
+    </div>
   )
 }
 

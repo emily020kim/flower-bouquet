@@ -62,7 +62,6 @@ const Home = () => {
             Welcome <PiFlowerThin size={20} className="text-white ml-1" />
           </button>
         </a>
-        
       </div>
     </div>
     

@@ -45,9 +45,9 @@ const FlowerCard = () => {
     }, []);
 
     return (
-        <div>
+        <div className='grid grid-cols-3 gap-4 p-4 justify-items-center h-screen'>
             {data && data.map((flower, index) => (
-                <div key={index} className='flex flex-col space-y-4 items-center justify-center bg-white w-1/6 rounded-md p-4'>
+                <div key={index} className='flex flex-col space-y-4 items-center justify-center bg-white w-2/3 rounded-md p-4'>
                     <h1 className='text-2xl text-pink-400 font-semibold'>{flower.name}</h1>
                     <img 
                         src={images[index % images.length].image} 
