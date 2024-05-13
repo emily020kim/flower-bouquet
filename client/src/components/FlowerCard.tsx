@@ -21,6 +21,17 @@ const images = [
     { image: carnation },
 ]
 
+const links = [
+    { link: "/rose" },
+    { link: "/lavender" },
+    { link: "/tulip" },
+    { link: "/orchid" },
+    { link: "/dahlia" },
+    { link: "/hyacinth" },
+    { link: "/lily" },
+    { link: "/carnation" },
+]
+
 interface Flower {
     name: string;
     genus: string;
@@ -56,7 +67,7 @@ const FlowerCard = () => {
                     <h2 className='text-base'>genus: {flower.genus}</h2>
                     <h3 className='text-sm bg-pink-300 rounded-sm p-1'>{flower.season}</h3>
                     {/** route to flower */}
-                    <a href='/bouquet'>
+                    <a href={links[index % links.length].link}>
                         <button
                             className='flex bg-pink-500 text-sm items-center px-2 py-2 rounded-md text-white font-serif'
                         >

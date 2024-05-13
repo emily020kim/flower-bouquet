@@ -1,10 +1,40 @@
-import { useState, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Rose from "../models/Rose";
 import Loader from '../components/Loader';
 
+import { GiFamilyHouse } from "react-icons/gi";
+import { SiSpring } from "react-icons/si";
+import { TbLineHeight } from "react-icons/tb";
+import { IoWaterSharp } from "react-icons/io5";
+import { CiSun } from "react-icons/ci";
+
+interface Rose {
+  name: string;
+  genus: string;
+  season: string;
+  height: string;
+  water: string;
+  sunlight: string;
+}
+
 const RosePage = () => {
   const [isRotating, setIsRotating] = useState(false);
+  const [roseData, setRoseData] = useState<Rose | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/rose");
+        const parsedData = await response.json();
+        setRoseData(parsedData);
+      } catch(error) {
+        console.error("Error fetching from API: ", error);
+      }
+    };
+    
+    fetchData();
+  }, []);
 
   const adjustRoseForScreenSize = () => {
     let screenScale = null;
@@ -53,14 +83,16 @@ const RosePage = () => {
       </section>
 
       <div className='flex flex-col w-full md:w-1/2 h-full md:h-screen items-center justify-center'>
-        <h1 className='font-serif font-semibold text-2xl md:text-3xl lg:text-4xl text-red-300'>Emily's Bouquet</h1>
-        <a href='/bouquet'>
-          <button
-            className='flex bg-red-400 items-center px-2 py-3 rounded-md text-white font-normal font-serif mt-3'
-          >
-            Welcome
-          </button>
-        </a>
+          {roseData && (
+            <div className='flex flex-col space-y-4 items-center justify-center bg-white rounded-md shadow-sm p-4 font-serif'>
+              <h1 className='text-4xl text-red-700 font-semibold mb-2'>{roseData.name}</h1>
+              <h2 className='flex items-center justify-start text-lg'><GiFamilyHouse size={20} className='mr-2' />{roseData.genus}</h2>
+              <h3 className='flex items-center justify-start text-lg'><SiSpring size={15} className='mr-2 text-green-600' />{roseData.season}</h3>
+              <h3 className='flex items-center justify-start text-lg'><TbLineHeight size={20} className='mr-2' />{roseData.height}</h3>
+              <h3 className='flex items-center justify-start text-lg'><IoWaterSharp size={20} className='mr-2 text-blue-400' />{roseData.water}</h3>
+              <h3 className='flex items-center justify-start text-lg'><CiSun size={20} className='mr-2 text-yellow-400' />{roseData.sunlight}</h3>
+            </div>
+          )}
       </div>
     </div>
     

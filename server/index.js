@@ -21,7 +21,7 @@ app.get("/flowers", (req, res) => {
 
 app.get("/rose", (req, res) => {
     res.json(
-        { name: "Rose", genus: "Rosa", season: "Spring, Summer", height: "4-7 inches", water: "Water once a week", sunlight: "Direct sunlight" }
+        { name: "rose", genus: "rosa", season: "spring, summer", height: "4-7 inches", water: "water once a week", sunlight: "direct sunlight" }
     )
 })
 
