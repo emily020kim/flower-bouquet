@@ -2,7 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Bouquet from "./pages/Bouquet";
-import FlowerCard from "./components/FlowerCard";
+import RosePage from "./pages/RosePage";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bouquet" element={<Bouquet />} />
-          <Route path="/card" element={<FlowerCard />} />
+          <Route path="/rose" element={<RosePage />} />
         </Routes>
       </Router>
     </div>
