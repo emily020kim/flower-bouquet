@@ -8,14 +8,14 @@ app.use((req, res, next) => {
 
 app.get("/flowers", (req, res) => {
     res.json([
-        { name: "Rose", genus: "Rosa", season: "Spring, Summer" },
-        { name: "Lavender", genus: "Lavandula", season: "Spring, Summer" },
-        { name: "Tulip", genus: "Tulipa", season: "Spring" },
-        { name: "Orchid", genus: "Orchidaceae", season: "Winter, Spring" },
-        { name: "Dahlia", genus: "Dahlia", season: "Spring, Autumn" },
-        { name: "Hyacinth", genus: "Hyacinthus", season: "Spring" },
-        { name: "Lily", genus: "Lilium", season: "Summer, Autumn" },
-        { name: "Carnation", genus: "Caryophyllaceae", season: "Spring, Autumn" },
+        { name: "rose", genus: "rosa", season: "spring, summer" },
+        { name: "lavender", genus: "lavandula", season: "spring, summer" },
+        { name: "tulip", genus: "tulipa", season: "spring" },
+        { name: "orchid", genus: "orchidaceae", season: "winter, spring" },
+        { name: "dahlia", genus: "dahlia", season: "spring, autumn" },
+        { name: "hyacinth", genus: "hyacinthus", season: "spring" },
+        { name: "lily", genus: "lilium", season: "summer, autumn" },
+        { name: "carnation", genus: "caryophyllaceae", season: "spring, autumn" },
     ])
 })
 
