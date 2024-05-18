@@ -39,7 +39,7 @@ app.get("/tulip", (req, res) => {
 
 app.get("/orchid", (req, res) => {
     res.json(
-        { name: "orchid", genus: "orchidaceae", season: "winter, spring", water: "water every 1-2 weeks", sunlight: "indirect sunlight" }
+        { name: "orchid", genus: "orchidaceae", season: "winter, spring", height: "1-3 feet", water: "water every 1-2 weeks", sunlight: "indirect sunlight" }
     )
 })
 
