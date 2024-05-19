@@ -21,48 +21,48 @@ app.get("/flowers", (req, res) => {
 
 app.get("/rose", (req, res) => {
     res.json(
-        { name: "rose", genus: "rosa", season: "spring, summer", height: "4-7 inches", water: "water once a week", sunlight: "direct sunlight" }
+        { name: "rose", genus: "rosa", season: "spring, summer", height: "4 - 7 inches", water: "water once a week", sunlight: "direct sunlight" }
     )
 })
 
 app.get("/lavender", (req, res) => {
     res.json(
-        { name: "lavender", genus: "lavandula", season: "spring, summer", height: "20-24 inches", water: "water once every 2 weeks", sunlight: "full sun" }
+        { name: "lavender", genus: "lavandula", season: "spring, summer", height: "20 - 24 inches", water: "water once every 2 weeks", sunlight: "full sun" }
     )
 })
 
 app.get("/tulip", (req, res) => {
     res.json(
-        { name: "tulip", genus: "tulipa", season: "spring", height: "4-28 inches", water: "water once a week", sunlight: "full sun" }
+        { name: "tulip", genus: "tulipa", season: "spring", height: "4 - 28 inches", water: "water once a week", sunlight: "full sun" }
     )
 })
 
 app.get("/orchid", (req, res) => {
     res.json(
-        { name: "orchid", genus: "orchidaceae", season: "winter, spring", height: "1-3 feet", water: "water every 1-2 weeks", sunlight: "indirect sunlight" }
+        { name: "orchid", genus: "orchidaceae", season: "winter, spring", height: "1 - 3 feet", water: "water every 1-2 weeks", sunlight: "indirect sunlight" }
     )
 })
 
 app.get("/dahlia", (req, res) => {
     res.json(
-        { nname: "dahlia", genus: "dahlia", season: "spring, autumn", water: "water once a week", sunlight: "direct sunlight" }
+        { name: "dahlia", genus: "dahlia", season: "spring, autumn", height: "1 - 6 feet", water: "water once a week", sunlight: "direct sunlight" }
     )
 })
 app.get("/hyacinth", (req, res) => {
     res.json(
-        { name: "hyacinth", genus: "hyacinthus", season: "spring", water: "water every 1-2 weeks", sunlight: "full sun" }
+        { name: "hyacinth", genus: "hyacinthus", season: "spring", height: "6 - 10 inches", water: "water every 1-2 weeks", sunlight: "full sun" }
     )
 })
 
 app.get("/lily", (req, res) => {
     res.json(
-        { name: "lily", genus: "lilium", season: "summer, autumn", water: "water every 2-3 days", sunlight: "direct sunlight" }
+        { name: "lily", genus: "lilium", season: "summer, autumn", height: "14 - 18 inches", water: "water every 2-3 days", sunlight: "direct sunlight" }
     )
 })
 
 app.get("/carnation", (req, res) => {
     res.json(
-        { name: "carnation", genus: "caryophyllaceae", season: "spring, autumn", water: "water once a week", sunlight: "full sun" }
+        { name: "carnation", genus: "caryophyllaceae", season: "spring, autumn", height: "6 - 24 inches", water: "water once a week", sunlight: "full sun" }
     )
 })
 
