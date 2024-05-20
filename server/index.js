@@ -12,7 +12,7 @@ app.get("/flowers", (req, res) => {
         { name: "lavender", genus: "lavandula", season: "spring, summer" },
         { name: "tulip", genus: "tulipa", season: "spring" },
         { name: "orchid", genus: "orchidaceae", season: "winter, spring" },
-        { name: "dahlia", genus: "dahlia", season: "spring, autumn" },
+        { name: "sunflower", genus: "helianthus", season: "summer" },
         { name: "hyacinth", genus: "hyacinthus", season: "spring" },
         { name: "lily", genus: "lilium", season: "summer, autumn" },
         { name: "carnation", genus: "caryophyllaceae", season: "spring, autumn" },
@@ -43,9 +43,9 @@ app.get("/orchid", (req, res) => {
     )
 })
 
-app.get("/dahlia", (req, res) => {
+app.get("/sunflower", (req, res) => {
     res.json(
-        { name: "dahlia", genus: "dahlia", season: "spring, autumn", height: "1 - 6 feet", water: "water once a week", sunlight: "direct sunlight" }
+        { name: "sunflower", genus: "helianthus", season: "summer", height: "5 - 6 feet", water: "water once a week", sunlight: "direct sunlight" }
     )
 })
 app.get("/hyacinth", (req, res) => {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { LuFlower } from "react-icons/lu";
 
 import carnation from "../assets/images/carnation.png";
-import dahlia from "../assets/images/dahlia.png";
+import sunflower from "../assets/images/sunflower.png";
 import hyacinth from "../assets/images/hyacinth.png";
 import lavender from "../assets/images/lavender.png";
 import lily from "../assets/images/lily.png";
@@ -15,7 +15,7 @@ const images = [
     { image: lavender },
     { image: tulip },
     { image: orchid }, 
-    { image: dahlia },
+    { image: sunflower },
     { image: hyacinth },
     { image: lily },
     { image: carnation },
@@ -26,7 +26,7 @@ const links = [
     { link: "/lavender" },
     { link: "/tulip" },
     { link: "/orchid" },
-    { link: "/dahlia" },
+    { link: "/sunflower" },
     { link: "/hyacinth" },
     { link: "/lily" },
     { link: "/carnation" },

@@ -6,7 +6,7 @@ import RosePage from "./pages/RosePage";
 import LavenderPage from "./pages/LavenderPage";
 import TulipPage from "./pages/TulipPage";
 import OrchidPage from "./pages/OrchidPage";
-import DahliaPage from "./pages/DahliaPage";
+import SunflowerPage from "./pages/SunflowerPage";
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/lavender" element={<LavenderPage />} />
           <Route path="/tulip" element={<TulipPage />} />
           <Route path="/orchid" element={<OrchidPage />} />
-          <Route path="/dahlia" element={<DahliaPage />} />
+          <Route path="/sunflower" element={<SunflowerPage />} />
         </Routes>
       </Router>
     </div>
