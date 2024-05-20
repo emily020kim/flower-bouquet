@@ -85,7 +85,7 @@ const HyacinthPage = () => {
       <div className='flex flex-col w-full md:w-1/2 h-full md:h-screen items-center justify-center'>
           {hyacinthData && (
             <div className='flex flex-col space-y-2 items-center justify-center bg-white rounded-md shadow-sm py-4 px-8 font-serif'>
-              <h1 className='text-4xl text-yellow-500 font-semibold my-2'>
+              <h1 className='text-4xl text-purple-400 font-semibold my-2'>
                 {hyacinthData.name}
               </h1>
               <div className='flex flex-col space-y-3 justify-start'>

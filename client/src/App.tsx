@@ -8,6 +8,7 @@ import TulipPage from "./pages/TulipPage";
 import OrchidPage from "./pages/OrchidPage";
 import SunflowerPage from "./pages/SunflowerPage";
 import HyacinthPage from "./pages/HyacinthPage";
+import LilyPage from "./pages/LilyPage";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/orchid" element={<OrchidPage />} />
           <Route path="/sunflower" element={<SunflowerPage />} />
           <Route path="/hyacinth" element={<HyacinthPage />} />
+          <Route path="/lily" element={<LilyPage />} />
         </Routes>
       </Router>
     </div>
