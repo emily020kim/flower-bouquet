@@ -1,6 +1,6 @@
 import { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import Lily from '../models/Lily';
+import Carnation from '../models/Carnation';
 import Loader from '../components/Loader';
 
 import { GiFamilyHouse } from "react-icons/gi";
@@ -9,7 +9,7 @@ import { TbLineHeight } from "react-icons/tb";
 import { IoWaterSharp } from "react-icons/io5";
 import { CiSun } from "react-icons/ci";
 
-interface Lily {
+interface Carnation {
   name: string;
   genus: string;
   season: string;
@@ -18,16 +18,16 @@ interface Lily {
   sunlight: string;
 }
 
-const LilyPage = () => {
+const CarnationPage = () => {
   const [isRotating, setIsRotating] = useState(false);
-  const [lilyData, setLilyData] = useState<Lily | null>(null);
+  const [carnationData, setCarnationData] = useState<Carnation | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/lily");
+        const response = await fetch("http://localhost:5000/carnation");
         const parsedData = await response.json();
-        setLilyData(parsedData);
+        setCarnationData(parsedData);
       } catch(error) {
         console.error("Error fetching from API: ", error);
       }
@@ -36,28 +36,28 @@ const LilyPage = () => {
     fetchData();
   }, []);
 
-  const adjustLilyForScreenSize = () => {
+  const adjustCarnationForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, 0, 0];
     const rotation = [0, 0, 0];
 
     if (window.innerWidth < 768) {
-      screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [-0.3, 0.4, 0];
+      screenScale = [0.2, 0.2, 0.2];
+      screenPosition = [-0.25, -0.2, 0];
     } 
     if (window.innerWidth === 768) {
-      screenScale = [0.4, 0.4, 0.4];
-      screenPosition = [0, 0.4, 0];
+      screenScale = [0.18, 0.18, 0.18];
+      screenPosition = [0, 0.35, 0];
     } 
     if (window.innerWidth > 768) {
-      screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, 0.5, 0];
+      screenScale = [0.2, 0.2, 0.2];
+      screenPosition = [0, 0.4, 0];
     }
 
     return [screenScale, screenPosition, rotation];
   };
 
-  const [roseScale, rosePosition, roseRotation] = adjustLilyForScreenSize();
+  const [roseScale, rosePosition, roseRotation] = adjustCarnationForScreenSize();
 
   return (
     <div className='flex flex-col h-screen md:flex-row w-full'>
@@ -71,7 +71,7 @@ const LilyPage = () => {
             <ambientLight intensity={0.5} />
             <hemisphereLight groundColor="#000000" intensity={1} />
 
-            <Lily
+            <Carnation
               position={rosePosition}
               scale={roseScale}
               rotation={roseRotation}
@@ -83,26 +83,26 @@ const LilyPage = () => {
       </section>
 
       <div className='flex flex-col w-full md:w-1/2 h-full md:h-screen items-center justify-center'>
-          {lilyData && (
+          {carnationData && (
             <div className='flex flex-col space-y-2 items-center justify-center bg-white rounded-md shadow-sm py-4 px-8 font-serif'>
-              <h1 className='text-4xl text-red-400 font-semibold my-2'>
-                {lilyData.name}
+              <h1 className='text-4xl text-pink-700 font-semibold my-2'>
+                {carnationData.name}
               </h1>
               <div className='flex flex-col space-y-3 justify-start'>
                 <h2 className='flex items-center text-lg font-medium'>
-                  <GiFamilyHouse size={20} className='mr-2' />{lilyData.genus}
+                  <GiFamilyHouse size={20} className='mr-2' />{carnationData.genus}
                 </h2>
                 <h3 className='flex items-center text-lg font-medium'>
-                  <SiSpring size={15} className='mr-2 text-green-600' />{lilyData.season}
+                  <SiSpring size={15} className='mr-2 text-green-600' />{carnationData.season}
                 </h3>
                 <h3 className='flex items-center text-lg font-medium'>
-                  <TbLineHeight size={20} className='mr-2' />{lilyData.height}
+                  <TbLineHeight size={20} className='mr-2' />{carnationData.height}
                 </h3>
                 <h3 className='flex items-center text-lg font-medium'>
-                  <IoWaterSharp size={20} className='mr-2 text-blue-400' />{lilyData.water}
+                  <IoWaterSharp size={20} className='mr-2 text-blue-400' />{carnationData.water}
                 </h3>
                 <h3 className='flex items-center text-lg font-medium'>
-                  <CiSun size={20} className='mr-2 text-yellow-400' />{lilyData.sunlight}
+                  <CiSun size={20} className='mr-2 text-yellow-400' />{carnationData.sunlight}
                 </h3>
               </div>
             </div>
@@ -113,4 +113,4 @@ const LilyPage = () => {
   )
 }
 
-export default LilyPage
+export default CarnationPage
